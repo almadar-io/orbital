@@ -95,7 +95,7 @@ const withOrbital = ({
   styles,
   gaTrackingCode,
   disableAuth,
-  localStorage
+  offlineStorage
 }) => WrappedComponent => {
   class WithOrbital extends React.Component {
     state = {

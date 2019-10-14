@@ -2,7 +2,7 @@ import React from "react";
 import ModelEdit from "Templates/_shared/ModelEdit/ModelEdit";
 import ClientNotification from "Templates/_shared/ClientNotification/ClientNotification";
 import { withStyles } from "@material-ui/core/styles";
-import userSchema from "Models/user";
+import userSchema from "../Models/user";
 
 const Profile = ({
   user,
