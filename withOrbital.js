@@ -62,14 +62,14 @@ const Profile = Loadable({
 const MainWrapper = Loadable({
   loader: () =>
     import(
-      /* webpackChunkName: "MainWrapper" */ "Templates/Wrappers/MainWrapper"
+      /* webpackChunkName: "MainWrapper" */ "@markab.io/orbital-templates/Material/Wrappers/MainWrapper"
     ),
   loading: err => <Loading err={err} />
 });
 const LoginWrapper = Loadable({
   loader: () =>
     import(
-      /* webpackChunkName: "LoginWrapper" */ "Templates/Wrappers/LoginWrapper"
+      /* webpackChunkName: "LoginWrapper" */ "@markab.io/orbital-templates/Material/Wrappers/LoginWrapper"
     ),
   loading: err => <Loading err={err} />
 });
