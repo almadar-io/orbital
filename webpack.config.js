@@ -62,7 +62,7 @@ module.exports = env => {
     },
     resolve: {
       alias: {
-        Templates: path.resolve(__dirname, "../Orbital/Templates/Material"),
+        Templates: path.resolve(__dirname, "./Templates/Material"),
         Theme: path.resolve(__dirname, "./theme.js"),
         Config: env
           ? env.production
