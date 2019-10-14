@@ -2,7 +2,7 @@ import React from "react";
 import ModelList from "@markab.io/orbital-templates/Material/_shared/ModelList/ModelList";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./User.styles";
-import userSchema from "Models/user";
+import userSchema from "../Models/user";
 
 const User = ({
   users,
