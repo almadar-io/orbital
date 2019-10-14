@@ -69,8 +69,8 @@ module.exports = env => {
             ? path.resolve(__dirname, "./config/prod.js")
             : path.resolve(__dirname, "./config/qa.js")
           : path.resolve(__dirname, "./config/index.js"),
-        Store: path.resolve(__dirname, "../Orbital/Store"),
-        Models: path.resolve(__dirname, "../Orbital/Models")
+        Store: path.resolve(__dirname, "./Store"),
+        Models: path.resolve(__dirname, "./Models")
       }
     },
     //To run development server

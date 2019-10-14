@@ -1,5 +1,5 @@
 import React from "react";
-import Knowledge from "../../OrbitalKB/Knowledge/Knowledge";
+import Knowledge from "../Knowledge/Knowledge";
 const Kernel = ({
   kernel,
   kernel_createModel,
