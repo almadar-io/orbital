@@ -62,15 +62,12 @@ module.exports = env => {
     },
     resolve: {
       alias: {
-        Templates: path.resolve(__dirname, "./Templates/Material"),
         Theme: path.resolve(__dirname, "./theme.js"),
         Config: env
           ? env.production
             ? path.resolve(__dirname, "./config/prod.js")
             : path.resolve(__dirname, "./config/qa.js")
-          : path.resolve(__dirname, "./config/index.js"),
-        Store: path.resolve(__dirname, "./Store"),
-        Models: path.resolve(__dirname, "./Models")
+          : path.resolve(__dirname, "./config/index.js")
       }
     },
     //To run development server

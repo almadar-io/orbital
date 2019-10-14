@@ -18,7 +18,7 @@ import {
   Kb,
   Crud
 } from "@markab.io/react";
-import Loading from "Templates/_shared/Loading/Loading";
+import Loading from "@markab.io/orbital-templates/Material/_shared/Loading/Loading";
 import theme from "Theme";
 import config from "Config";
 import ReactGA from "react-ga";

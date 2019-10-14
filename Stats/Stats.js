@@ -11,7 +11,7 @@ import {
   Icon
 } from "@material-ui/core";
 import theme from "Theme";
-import { CountChart } from "Templates/_shared/Charts/Charts";
+import { CountChart } from "@markab.io/orbital-templates/Material/_shared/Charts/Charts";
 const Stats = ({ model_count, model_form, modelName, query, field }) => {
   const periods = ["daily", "monthly", "yearly"];
   // query={{

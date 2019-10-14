@@ -1,5 +1,5 @@
 import React from "react";
-import Register from "Templates/_shared/Register/Register";
+import Register from "@markab.io/orbital-templates/Material/_shared/Register/Register";
 
 const RegisterModule = ({
   onChange,
