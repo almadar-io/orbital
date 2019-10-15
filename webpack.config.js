@@ -77,27 +77,6 @@ module.exports = env => {
         Templates: "@markab.io/orbital-templates"
       }
     },
-    externals: {
-      // Don't bundle react or react-dom
-      react: {
-        commonjs: "react",
-        commonjs2: "react",
-        amd: "React",
-        root: "React"
-      },
-      "react-dom": {
-        commonjs: "react-dom",
-        commonjs2: "react-dom",
-        amd: "ReactDOM",
-        root: "ReactDOM"
-      },
-      "orbital-tempaltes": {
-        commonjs: "orbital-templates",
-        commonjs2: "orbital-templates",
-        amd: "OrbitalTemplates",
-        root: "OrbitalTemplates"
-      }
-    },
     //To run development server
     devServer: {
       contentBase: __dirname
