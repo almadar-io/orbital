@@ -16,9 +16,11 @@ const MyApp = withOrbital({ styles, rootStore })(props => {
       path="/"
       render={props => {
         return (
-          <MainWrapper classes={classes} {...props} routeList={routeList}>
-            <User {...props} />
-          </MainWrapper>
+          <ThemeProvider theme={theme}>
+            <MainWrapper classes={classes} {...props} routeList={routeList}>
+              <User {...props} />
+            </MainWrapper>
+          </ThemeProvider>
         );
       }}
     ></Route>
@@ -26,9 +28,7 @@ const MyApp = withOrbital({ styles, rootStore })(props => {
 });
 ReactDOM.render(
   <Router>
-    <ThemeProvider theme={theme}>
-      <MyApp />
-    </ThemeProvider>
+    <MyApp />
   </Router>,
   document.getElementById("app")
 );
