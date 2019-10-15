@@ -67,7 +67,25 @@ module.exports = env => {
           ? env.production
             ? path.resolve(__dirname, "./config/prod.js")
             : path.resolve(__dirname, "./config/qa.js")
-          : path.resolve(__dirname, "./config/index.js")
+          : path.resolve(__dirname, "./config/index.js"),
+        react: path.resolve(__dirname, "./node_modules/react"),
+        "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
+        Templates: "@markab.io/orbital-templates/lib"
+      }
+    },
+    externals: {
+      // Don't bundle react or react-dom
+      react: {
+        commonjs: "react",
+        commonjs2: "react",
+        amd: "React",
+        root: "React"
+      },
+      "react-dom": {
+        commonjs: "react-dom",
+        commonjs2: "react-dom",
+        amd: "ReactDOM",
+        root: "ReactDOM"
       }
     },
     //To run development server

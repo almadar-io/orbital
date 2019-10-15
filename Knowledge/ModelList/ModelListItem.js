@@ -1,7 +1,7 @@
 import React from "react";
 import KeyboardArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
-import ConfirmDeleteModal from "@markab.io/orbital-templates/Material/_shared/ConfirmDeleteModal/ConfirmDeleteModal";
+import ConfirmDeleteModal from "Templates/Material/_shared/ConfirmDeleteModal/ConfirmDeleteModal";
 import ImageGallery from "react-image-gallery";
 import moment from "moment";
 import { withState, compose } from "recompose";

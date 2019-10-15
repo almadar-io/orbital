@@ -2,7 +2,7 @@ import React from "react";
 import { styles } from "./Knowledge.styles.js";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import theme from "Theme";
-import ModelList from "@markab.io/orbital-templates/Material/_shared/ModelList/ModelList";
+import ModelList from "Templates/Material/_shared/ModelList/ModelList";
 import ModelListItem from "./ModelList/ModelListItem";
 import ModelPreview from "./ModelPreview/ModelPreview";
 import { withStyles, Button } from "@material-ui/core";
