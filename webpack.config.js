@@ -70,7 +70,9 @@ module.exports = env => {
             ? path.resolve(__dirname, "./config/prod.js")
             : path.resolve(__dirname, "./config/qa.js")
           : path.resolve(__dirname, "./config/index.js"),
-        Templates: "@markab.io/orbital-templates"
+        Templates: "@markab.io/orbital-templates",
+        react: path.resolve(__dirname, "./node_modules/react"),
+        "react-dom": path.resolve(__dirname, "./node_modules/react-dom")
       }
     },
     //To run development server

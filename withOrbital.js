@@ -19,7 +19,6 @@ import {
   Crud
 } from "@markab.io/react";
 import { Loading, MainWrapper, LoginWrapper } from "Templates";
-import theme from "Theme";
 import config from "Config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
@@ -80,7 +79,8 @@ const withOrbital = ({
   styles,
   gaTrackingCode,
   disableAuth,
-  offlineStorage
+  offlineStorage,
+  theme
 }) => WrappedComponent => {
   class WithOrbital extends React.Component {
     state = {
@@ -147,6 +147,7 @@ const withOrbital = ({
       const { isLoggedIn } = this.state;
       const { classes } = this.props;
       console.log("WITH ORBITAL CLASSES", classes);
+      console.log("WITH ORBITAL THEME", theme);
       const currentRouteList = isLoggedIn ? routeList : routeListLoggedOut;
       return (
         <ThemeProvider theme={theme}>
