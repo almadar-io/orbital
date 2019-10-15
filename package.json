@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/markab-io/orbital#readme",
   "dependencies": {
-    "@markab.io/orbital-templates": "0.0.2",
     "@markab.io/react": "^1.6.2",
     "@material-ui/core": "^4.3.2",
     "@material-ui/icons": "^4.2.1",
