@@ -70,6 +70,10 @@ module.exports = env => {
           : path.resolve(__dirname, "./config/index.js"),
         react: path.resolve(__dirname, "./node_modules/react"),
         "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
+        "orbital-templates": path.resolve(
+          __dirname,
+          "./node_modules/orbital-templates"
+        ),
         Templates: "@markab.io/orbital-templates/lib/Material"
       }
     },
@@ -86,6 +90,12 @@ module.exports = env => {
         commonjs2: "react-dom",
         amd: "ReactDOM",
         root: "ReactDOM"
+      },
+      "orbital-tempaltes": {
+        commonjs: "orbital-templates",
+        commonjs2: "orbital-templates",
+        amd: "OrbitalTemplates",
+        root: "OrbitalTemplates"
       }
     },
     //To run development server
