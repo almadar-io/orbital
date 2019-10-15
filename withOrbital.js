@@ -23,8 +23,7 @@ import theme from "Theme";
 import config from "Config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
-import { withStyles } from "@material-ui/core/styles";
-import { ThemeProvider } from "@material-ui/styles";
+import { withStyles, ThemeProvider } from "@material-ui/core/styles";
 const ForgotPassword = Loadable({
   loader: () =>
     import(
