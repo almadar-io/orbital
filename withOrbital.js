@@ -384,7 +384,6 @@ const withOrbital = ({
               }}
             />
             <WrappedComponent
-              offlineStorage={offlineStorage}
               user={this.state.currentUser}
               isLoggedIn={isLoggedIn}
               appSettings={this.state.appSettings}
