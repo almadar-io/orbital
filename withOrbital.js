@@ -18,7 +18,7 @@ import {
   Kb,
   Crud
 } from "@markab.io/react";
-import Loading from "Templates/Material/_shared/Loading/Loading";
+import Loading from "Templates/_shared/Loading/Loading";
 import theme from "Theme";
 import config from "Config";
 import ReactGA from "react-ga";
@@ -62,14 +62,14 @@ const Profile = Loadable({
 const MainWrapper = Loadable({
   loader: () =>
     import(
-      /* webpackChunkName: "MainWrapper" */ "Templates/Material/Wrappers/MainWrapper"
+      /* webpackChunkName: "MainWrapper" */ "Templates/Wrappers/MainWrapper"
     ),
   loading: err => <Loading err={err} />
 });
 const LoginWrapper = Loadable({
   loader: () =>
     import(
-      /* webpackChunkName: "LoginWrapper" */ "Templates/Material/Wrappers/LoginWrapper"
+      /* webpackChunkName: "LoginWrapper" */ "Templates/Wrappers/LoginWrapper"
     ),
   loading: err => <Loading err={err} />
 });

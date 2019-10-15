@@ -70,7 +70,7 @@ module.exports = env => {
           : path.resolve(__dirname, "./config/index.js"),
         react: path.resolve(__dirname, "./node_modules/react"),
         "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
-        Templates: "@markab.io/orbital-templates/lib"
+        Templates: "@markab.io/orbital-templates/lib/Material"
       }
     },
     externals: {
