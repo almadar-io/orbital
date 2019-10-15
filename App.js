@@ -6,7 +6,8 @@ import { compose } from "recompose";
 import { ThemeProvider, withStyles } from "@material-ui/styles";
 import withOrbital from "./withOrbital";
 import User from "./User/User";
-import { Loading } from "Templates";
+import routeList from "./Routes";
+import { Loading, MainWrapper } from "Templates";
 const MyApp = props => {
   return (
     <ThemeProvider theme={theme}>
@@ -14,7 +15,11 @@ const MyApp = props => {
         <Route
           path="/"
           render={props => {
-            return <User {...props} />;
+            return (
+              <MainWrapper classes={{}} {...props} routeList={routeList}>
+                <User {...props} />
+              </MainWrapper>
+            );
           }}
         ></Route>
       </Router>
@@ -24,6 +29,4 @@ const MyApp = props => {
 
 ReactDOM.render(<MyApp />, document.getElementById("app"));
 
-export default compose(
-  withOrbital({})
-)(MyApp);
+export default compose(withOrbital({}))(MyApp);
