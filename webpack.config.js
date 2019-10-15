@@ -10,7 +10,9 @@ module.exports = env => {
     output: {
       path: path.join(__dirname, "lib"),
       chunkFilename: "[name].bundle.js",
-      filename: "[name].js"
+      filename: "[name].js",
+      libraryTarget: "umd",
+      umdNamedDefine: true
     },
     module: {
       rules: [
