@@ -70,18 +70,13 @@ module.exports = env => {
             ? path.resolve(__dirname, "./config/prod.js")
             : path.resolve(__dirname, "./config/qa.js")
           : path.resolve(__dirname, "./config/index.js"),
-        react: path.resolve(__dirname, "./node_modules/react"),
-        "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
-        "orbital-templates": path.resolve(
-          __dirname,
-          "./node_modules/orbital-templates"
-        ),
-        Templates: "@markab.io/orbital-templates"
+        Templates: "@markab.io/orbital-templates/lib/main.js"
       }
     },
     //To run development server
     devServer: {
       contentBase: __dirname
-    }
+    },
+    devtool: "source-map"
   };
 };
