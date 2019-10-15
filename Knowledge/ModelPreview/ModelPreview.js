@@ -1,10 +1,16 @@
 import React from "react";
-import { Button, Grid, Paper, CircularProgress, Toolbar, AppBar } from "@material-ui/core";
-import Autocomplete from "Templates/_shared/Autocomplete/Autocomplete";
+import {
+  Button,
+  Grid,
+  Paper,
+  CircularProgress,
+  Toolbar,
+  AppBar
+} from "@material-ui/core";
 import ListTree from "./ListTree.js";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import ConfirmDeleteModal from "Templates/_shared/ConfirmDeleteModal/ConfirmDeleteModal";
+import { ConfirmDeleteModal, Autocomplete } from "Templates";
 import GraphTree from "./GraphTree";
 import { withState, compose } from "recompose";
 import {

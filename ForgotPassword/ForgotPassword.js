@@ -1,5 +1,5 @@
 import React from "react";
-import ForgotPassword from "Templates/_shared/ForgotPassword/ForgotPassword";
+import { ForgotPassword } from "Templates";
 
 const ForgotPasswordModule = ({
   classes,

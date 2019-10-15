@@ -1,9 +1,9 @@
 import React from "react";
 import { withCrud, Forms, Notification } from "@markab.io/react";
 import { Route, withRouter } from "react-router-dom";
-import ModelList from "Templates/_shared/ModelList/ModelList";
+import { ModelList } from "Templates";
 import { compose, withPropsOnChange } from "recompose";
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress } from "@material-ui/core";
 
 const AdminDetail = ({
   model,

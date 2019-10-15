@@ -74,7 +74,7 @@ module.exports = env => {
           __dirname,
           "./node_modules/orbital-templates"
         ),
-        Templates: "@markab.io/orbital-templates/lib/Material"
+        Templates: "@markab.io/orbital-templates"
       }
     },
     externals: {

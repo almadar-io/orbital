@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import AdminEdit from "./AdminEdit";
-import MainWrapper from "Templates/Wrappers/MainWrapper";
+import { MainWrapper } from "Templates";
 import { CircularProgress } from "@material-ui/core";
 
 //this will take Admin from "admin-service"

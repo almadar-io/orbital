@@ -1,5 +1,5 @@
 import React from "react";
-import Register from "Templates/_shared/Register/Register";
+import Register from "Templates";
 
 const RegisterModule = ({
   onChange,

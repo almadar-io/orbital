@@ -1,5 +1,12 @@
 import React from "react";
-import { ListItem, Icon, IconButton, Typography, Menu, MenuItem } from "@material-ui/core";
+import {
+  ListItem,
+  Icon,
+  IconButton,
+  Typography,
+  Menu,
+  MenuItem
+} from "@material-ui/core";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import StarRateIcon from "@material-ui/icons/StarRate";
@@ -7,7 +14,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import CancelIcon from "@material-ui/icons/Cancel";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
-import TextField from "Templates/_shared/Forms/Inputs/Forms.TextFieldInput";
+import { Inputs } from "Templates";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { compose, withState } from "recompose";
 
@@ -144,7 +151,7 @@ class Node extends React.Component {
       );
     }
     return (
-      <TextField
+      <Inputs.TextField
         id={`input-${this.props._id}`}
         type="text"
         value={this.props.nodeValue.value}

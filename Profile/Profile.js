@@ -1,6 +1,5 @@
 import React from "react";
-import ModelEdit from "Templates/_shared/ModelEdit/ModelEdit";
-import ClientNotification from "Templates/_shared/ClientNotification/ClientNotification";
+import { ModelEdit, ClientNotification } from "Templates";
 import { withStyles } from "@material-ui/core/styles";
 import userSchema from "../Models/user";
 

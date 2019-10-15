@@ -1,5 +1,5 @@
 import React from "react";
-import ModelList from "Templates/_shared/ModelList/ModelList";
+import { ModelList } from "Templates";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./Settings.styles";
 import userSchema from "../Models/user";

@@ -1,5 +1,5 @@
 import React from "react";
-import ResetPassword from "Templates/_shared/ResetPassword/ResetPassword";
+import ResetPassword from "Templates";
 
 const ResetPasswordModule = ({
   changePassword,

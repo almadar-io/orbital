@@ -11,7 +11,7 @@ import {
   Icon
 } from "@material-ui/core";
 import theme from "Theme";
-import { CountChart } from "Templates/_shared/Charts/Charts";
+import { Charts } from "Templates";
 const Stats = ({ model_count, model_form, modelName, query, field }) => {
   const periods = ["daily", "monthly", "yearly"];
   // query={{
@@ -37,7 +37,7 @@ const Stats = ({ model_count, model_form, modelName, query, field }) => {
           </Grid>
           <Grid item>
             {count && (
-              <CountChart
+              <Charts.CountChart
                 label={`${modelName} created over time`}
                 count={count}
               />
