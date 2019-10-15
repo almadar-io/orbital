@@ -1,7 +1,7 @@
 //add localStorage
 import queryString from "query-string";
 
-export default class RootStore {
+export default class Store {
   constructor({
     authUiStore,
     authDomainStore,

@@ -2,7 +2,6 @@ import { fade } from "@material-ui/core/styles/colorManipulator";
 const drawerWidth = 180;
 const appBarHeight = 64;
 export const styles = theme => {
-  console.log("theme", theme);
   return {
     root: {
       [theme.breakpoints.up("md")]: {
