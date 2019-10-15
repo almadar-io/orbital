@@ -5,8 +5,8 @@
   "main": "./index.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --mode=development --port 8085",
-    "deploy": "./node_modules/.bin/webpack --env.production && cp -a lib/ client/ && cp -a ./index.html client/ && ./node_modules/.bin/serverless client deploy --no-confirm",
-    "build": "./node_modules/.bin/webpack --env.production",
+    "deploy": "npm run build && cp -a lib/ client/ && cp -a ./index.html client/ && ./node_modules/.bin/serverless client deploy --no-confirm",
+    "build": "rm -rf ./lib/* && ./node_modules/.bin/webpack --env.production",
     "test": "node_modules/.bin/jest"
   },
   "repository": {
