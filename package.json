@@ -2,7 +2,7 @@
   "name": "@markab.io/orbital",
   "version": "0.4.3",
   "description": "A way to get up and running quickly with any programming task.",
-  "main": "./index.js",
+  "main": "./lib/main.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --mode=development --port 8085",
     "deploy": "npm run build && cp -a lib/ client/ && cp -a ./index.html client/ && ./node_modules/.bin/serverless client deploy --no-confirm",
