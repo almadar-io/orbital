@@ -18,11 +18,17 @@ import {
   Kb,
   Crud
 } from "@markab.io/react";
-import { Loading, MainWrapper, LoginWrapper } from "Templates";
 import config from "Config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
+
+const {  MainWrapper, LoginWrapper } = Loadable({
+  loader: () => import(/* webpackChunkName: "ForgotPassword" */ "Templates"),
+  loading: () => {
+    return <Loading />;
+  }
+});
 const ForgotPassword = Loadable({
   loader: () =>
     import(
