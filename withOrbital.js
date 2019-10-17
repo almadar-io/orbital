@@ -7,7 +7,7 @@ import {
   Redirect
 } from "react-router-dom";
 import Loadable from "react-loadable";
-import { routeListLoggedOut } from "./Routes";
+import routeListLoggedOut from "./Routes";
 import {
   LoginWithAuth,
   RegisterWithAuth,
@@ -22,8 +22,7 @@ import config from "Config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
-import { MainWrapper, LoginWrapper } from "Templates";
-
+import { MainWrapper, LoginWrapper, Loading } from "Templates";
 const ForgotPassword = Loadable({
   loader: () =>
     import(
@@ -253,6 +252,7 @@ const withOrbital = ({
                       notificationDomainStore={
                         rootStore.notificationDomainStore
                       }
+                      crudDomainStore={rootStore.crudDomainStore}
                     >
                       <Forms formsDomainStore={rootStore.formsDomainStore}>
                         <Media
