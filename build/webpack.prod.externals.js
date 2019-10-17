@@ -29,28 +29,16 @@ module.exports = {
     amd: "@material-ui/icons",
     root: "@material-ui/icons"
   },
-  mobx: {
-    commonjs: "mobx",
-    commonjs2: "mobx",
-    amd: "mobx",
-    root: "mobx"
-  },
-  "mobx-react": {
-    commonjs: "mobx-react",
-    commonjs2: "mobx-react",
-    amd: "mobx-react",
-    root: "mobx-react"
-  },
-  "mobx-state-tree": {
-    commonjs: "mobx-state-tree",
-    commonjs2: "mobx-state-tree",
-    amd: "mobx-state-tree",
-    root: "mobx-state-tree"
-  },
   moment: {
     commonjs: "moment",
     commonjs2: "moment",
     amd: "moment",
     root: "moment"
+  },
+  Templates: {
+    commonjs: "Templates",
+    commonjs2: "Templates",
+    amd: "Templates",
+    root: "Templates"
   }
 };

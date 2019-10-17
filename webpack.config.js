@@ -16,9 +16,6 @@ module.exports = env => ({
     umdNamedDefine: true // Important
   },
   externals: env.production ? externals : {},
-  optimization: {
-    usedExports: true
-  },
   module: {
     rules: [
       {
@@ -46,7 +43,6 @@ module.exports = env => ({
       react: path.resolve("./node_modules/react"),
       "react-router-dom": path.resolve("./node_modules/react-router-dom"),
       Orbital: path.resolve(__dirname, "./orbital"),
-      Templates: path.resolve(__dirname, "../orbital-templates/Material"),
       Theme: path.resolve(__dirname, "./theme.js"),
       Config: env
         ? env.production
@@ -59,7 +55,7 @@ module.exports = env => ({
       // )
     }
   },
-  // plugins: [new BundleAnalyzerPlugin()],
+  plugins: env.production ? [new BundleAnalyzerPlugin()] : [],
   //To run development server
   devServer: {
     contentBase: __dirname

@@ -2,13 +2,13 @@ import React from "react";
 import theme from "Theme";
 import { styles } from "./App.styles";
 import { Route, Switch } from "react-router-dom";
-import withOrbital from "./withOrbital";
+import withOrbital from "../withOrbital";
 import config from "Config";
-import offlineStorage from "./OfflineStorage/OfflineStorage";
-import rootStore from "./Store/rootStore";
-import User from "./User/User";
+import offlineStorage from "../OfflineStorage/OfflineStorage";
+import rootStore from "../Store/rootStore";
+import User from "../User/User";
 import { Crud, Notification, Media, Forms } from "@markab.io/react";
-import routeList from "./Routes";
+import routeList from "../Routes";
 import { MainWrapper } from "Templates";
 const logo = "";
 const MyApp = props => {
