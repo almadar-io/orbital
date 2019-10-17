@@ -3,6 +3,7 @@ var webpack = require("webpack");
 var path = require("path");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+const externals = require("./build/webpack.prod.externals");
 
 module.exports = env => ({
   entry: "./index.js",
@@ -14,50 +15,7 @@ module.exports = env => ({
     libraryTarget: "umd",
     umdNamedDefine: true // Important
   },
-  externals: {
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "react",
-      root: "react"
-    },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "react-dom",
-      root: "react-dom"
-    },
-    "@material-ui/core": {
-      commonjs: "@material-ui/core",
-      commonjs2: "@material-ui/core",
-      amd: "@material-ui/core",
-      root: "@material-ui/core"
-    },
-    mobx: {
-      commonjs: "mobx",
-      commonjs2: "mobx",
-      amd: "mobx",
-      root: "mobx"
-    },
-    "mobx-react": {
-      commonjs: "mobx-react",
-      commonjs2: "mobx-react",
-      amd: "mobx-react",
-      root: "mobx-react"
-    },
-    "mobx-state-tree": {
-      commonjs: "mobx-state-tree",
-      commonjs2: "mobx-state-tree",
-      amd: "mobx-state-tree",
-      root: "mobx-state-tree"
-    },
-    moment: {
-      commonjs: "moment",
-      commonjs2: "moment",
-      amd: "moment",
-      root: "moment"
-    }
-  },
+  externals: env.production ? externals : {},
   optimization: {
     usedExports: true
   },
@@ -86,10 +44,10 @@ module.exports = env => ({
   resolve: {
     alias: {
       react: path.resolve("./node_modules/react"),
-      Templates: path.resolve(__dirname, "../orbital-templates/Material"),
+      "react-router-dom": path.resolve("./node_modules/react-router-dom"),
       Orbital: path.resolve(__dirname, "./orbital"),
+      Templates: path.resolve(__dirname, "../orbital-templates/Material"),
       Theme: path.resolve(__dirname, "./theme.js"),
-      "@material-ui/styles": path.resolve("./node_modules/@material-ui/styles"),
       Config: env
         ? env.production
           ? path.resolve(__dirname, "./config/prod.js")
@@ -101,9 +59,10 @@ module.exports = env => ({
       // )
     }
   },
-  plugins: [new BundleAnalyzerPlugin()],
+  // plugins: [new BundleAnalyzerPlugin()],
   //To run development server
   devServer: {
     contentBase: __dirname
-  }
+  },
+  devtool: "sourcmap"
 });

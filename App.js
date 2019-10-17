@@ -1,35 +1,55 @@
-import ReactDOM from "react-dom";
 import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
-import { withStyles, ThemeProvider } from "@material-ui/core/styles";
 import theme from "Theme";
 import { styles } from "./App.styles";
+import { Route, Switch } from "react-router-dom";
 import withOrbital from "./withOrbital";
+import config from "Config";
+import offlineStorage from "./OfflineStorage/OfflineStorage";
 import rootStore from "./Store/rootStore";
 import User from "./User/User";
+import { Crud, Notification, Media, Forms } from "@markab.io/react";
 import routeList from "./Routes";
 import { MainWrapper } from "Templates";
-const MyApp = withOrbital({ styles, rootStore })(props => {
-  const { classes } = props;
+const logo = "";
+const MyApp = props => {
+  const { classes, isLoggedIn, user, onLogout } = props;
   return (
-    <Route
-      path="/"
-      render={props => {
-        return (
-          <ThemeProvider theme={theme}>
-            <MainWrapper classes={classes} {...props} routeList={routeList}>
-              <User {...props} />
-            </MainWrapper>
-          </ThemeProvider>
-        );
-      }}
-    ></Route>
+    <Switch>
+      <Route
+        path="/"
+        render={({ location, history, match }) => (
+          <MainWrapper
+            routeList={routeList}
+            classes={classes}
+            location={location}
+            match={match}
+            history={history}
+            auth={isLoggedIn}
+            user={user}
+            logo={logo}
+            hasPadding={true}
+            onLogout={onLogout}
+            crudDomainStore={rootStore.crudDomainStore}
+          >
+            <Crud
+              modelName="users"
+              SERVER={config.SERVER}
+              offlineStorage={offlineStorage}
+              notificationDomainStore={rootStore.notificationDomainStore}
+              crudDomainStore={rootStore.crudDomainStore}
+            >
+              <Media mediaDomainStore={rootStore.mediaDomainStore}>
+                <Forms formsDomainStore={rootStore.formsDomainStore}>
+                  <User match={match} location={location} history={history} />
+                </Forms>
+              </Media>
+            </Crud>
+          </MainWrapper>
+        )}
+      />
+    </Switch>
   );
-});
-ReactDOM.render(
-  <Router>
-    <MyApp />
-  </Router>,
-  document.getElementById("app")
+};
+export default withOrbital({ styles, rootStore, theme, routeList, logo })(
+  MyApp
 );
-export default MyApp;

@@ -3,8 +3,7 @@ import {
   HashRouter as Router,
   Route,
   Switch,
-  withRouter,
-  Redirect
+  withRouter
 } from "react-router-dom";
 import Loadable from "react-loadable";
 import routeListLoggedOut from "./Routes";

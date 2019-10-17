@@ -2,9 +2,9 @@
   "name": "@markab.io/orbital",
   "version": "0.4.8",
   "description": "A way to get up and running quickly with any programming task.",
-  "main": "./index.js",
+  "main": "./lib/orbital.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --mode=development --port 8085",
+    "start": "./node_modules/.bin/webpack-dev-server --mode=development --env.development --port 8085",
     "deploy": "npm run build && cp -a lib/ client/ && cp -a ./index.html client/ && ./node_modules/.bin/serverless client deploy --no-confirm",
     "build": "rm -rf ./lib/* && ./node_modules/.bin/webpack --env.production",
     "test": "node_modules/.bin/jest"
@@ -20,18 +20,19 @@
   },
   "homepage": "https://github.com/markab-io/orbital#readme",
   "dependencies": {
-    "@markab.io/orbital-templates": "^0.1.12",
+    "@markab.io/react": "^1.7.14",
+    "@material-ui/core": "^4.5.1",
+    "@material-ui/icons": "^4.2.1",
     "prop-types": "^15.6.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-ga": "^2.7.0",
     "react-loadable": "^5.5.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "recompose": "^0.30.0",
     "uuid": "^3.3.2",
     "yup": "^0.27.0"
-  },
-  "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -55,12 +56,6 @@
     "mobx-react-devtools": "^6.0.3",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "@material-ui/core": "^4.3.2",
-    "@material-ui/icons": "^4.2.1",
-    "@material-ui/styles": "^4.3.0",
-    "@markab.io/react": "^1.7.14",
     "sass-loader": "^7.1.0",
     "serverless": "^1.47.0",
     "serverless-apig-s3": "^2.0.0",
