@@ -27,6 +27,12 @@ module.exports = env => ({
       amd: "react-dom",
       root: "react-dom"
     },
+    "@material-ui/core": {
+      commonjs: "@material-ui/core",
+      commonjs2: "@material-ui/core",
+      amd: "@material-ui/core",
+      root: "@material-ui/core"
+    },
     mobx: {
       commonjs: "mobx",
       commonjs2: "mobx",

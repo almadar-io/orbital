@@ -57,11 +57,6 @@ const Profile = Loadable({
   loader: () => import(/* webpackChunkName: "Login" */ "./Profile/Profile"),
   loading: err => <Loading err={err} />
 });
-const Kernel = Loadable({
-  loader: () =>
-    import(/* webpackChunkName: "LoginWrapper" */ "./Kernel/Kernel"),
-  loading: err => <Loading err={err} />
-});
 const NotificationPage = Loadable({
   loader: () =>
     import(
@@ -324,48 +319,6 @@ const withOrbital = ({
                         </Media>
                       </Forms>
                     </Crud>
-                  </MainWrapper>
-                );
-              }}
-            />
-            <Route
-              path="/kernel"
-              render={({ location, match, history }) => {
-                return (
-                  <MainWrapper
-                    classes={classes}
-                    routeList={currentRouteList}
-                    location={location}
-                    match={match}
-                    history={history}
-                    auth={isLoggedIn}
-                    user={this.state.currentUser}
-                    logo={logo}
-                    hasPadding={true}
-                    onLogout={this.onLogout}
-                    crudDomainStore={rootStore.crudDomainStore}
-                  >
-                    <Kb
-                      modelName="kernel"
-                      kbDomainStore={rootStore.kbDomainStore}
-                    >
-                      <Crud
-                        modelName="kernel"
-                        SERVER={config.SERVER}
-                        offlineStorage={offlineStorage}
-                        notificationDomainStore={
-                          rootStore.notificationDomainStore
-                        }
-                      >
-                        <Forms formsDomainStore={rootStore.formsDomainStore}>
-                          <Kernel
-                            location={location}
-                            match={match}
-                            history={history}
-                          />
-                        </Forms>
-                      </Crud>
-                    </Kb>
                   </MainWrapper>
                 );
               }}
