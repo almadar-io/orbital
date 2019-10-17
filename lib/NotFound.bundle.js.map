@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./NotFound/NotFound.js"],"names":["NotFound"],"mappings":"qHAIeA,UAHE,SAAC,GAChB,O,2EADuB,IAChB","file":"NotFound.bundle.js","sourcesContent":["import React from \"react\";\nconst NotFound = ({}) => {\n  return <p>Not Found</p>;\n};\nexport default NotFound;\n"],"sourceRoot":""}

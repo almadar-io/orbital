@@ -22,13 +22,8 @@ import config from "Config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
+import { MainWrapper, LoginWrapper } from "Templates";
 
-const {  MainWrapper, LoginWrapper } = Loadable({
-  loader: () => import(/* webpackChunkName: "ForgotPassword" */ "Templates"),
-  loading: () => {
-    return <Loading />;
-  }
-});
 const ForgotPassword = Loadable({
   loader: () =>
     import(
