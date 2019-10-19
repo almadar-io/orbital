@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./User.styles";
 import userSchema from "../Models/user";
 
-
 const User = ({
   users,
   users_createModel,
@@ -26,6 +25,7 @@ const User = ({
   removeNotification,
   ...rest
 }) => {
+  console.log(classes, "classes", "user");
   return (
     <ModelList
       modelArray={users}
