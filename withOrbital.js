@@ -328,6 +328,9 @@ const withOrbital = ({
               appSettings={this.state.appSettings}
               onLogout={this.onLogout}
               classes={classes}
+              location={this.props.location}
+              match={this.props.match}
+              history={this.props.history}
             />
             <Route
               path="*"
