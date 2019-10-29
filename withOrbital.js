@@ -14,7 +14,6 @@ import {
   Forms,
   Auth,
   Notification,
-  Kb,
   Crud
 } from "@markab.io/react";
 import config from "Config";
