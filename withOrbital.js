@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  HashRouter as Router,
-  Route,
-  Switch,
-  withRouter
-} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Loadable from "react-loadable";
 import routeListLoggedOut from "./Routes";
 import {
@@ -107,7 +102,7 @@ const withOrbital = ({
           })
           .catch(err => {
             this.setState({ isLoggedIn: false });
-            this.props.history.push("/auth/login");
+            this.props.history.push(`${match.path}/auth/login`);
           });
       }
     }
@@ -129,7 +124,7 @@ const withOrbital = ({
           })
           .catch(err => {
             this.setState({ isLoggedIn: false });
-            this.props.history.push("/auth/login");
+            this.props.history.push(`${match.path}/auth/login`);
           });
       }
     }
@@ -138,7 +133,7 @@ const withOrbital = ({
     }
     render() {
       const { isLoggedIn } = this.state;
-      const { classes } = this.props;
+      const { classes, match } = this.props;
       console.log("WITH ORBITAL CLASSES", classes);
       console.log("WITH ORBITAL THEME", theme);
       const currentRouteList = isLoggedIn ? routeList : routeListLoggedOut;
@@ -155,9 +150,13 @@ const withOrbital = ({
                       authDomainStore={rootStore.authDomainStore}
                     >
                       <Login
-                        onRegister={() => history.push("/auth/register")}
+                        onRegister={() =>
+                          this.props.history.push(`${match.path}/auth/register`)
+                        }
                         onForgotPassword={() =>
-                          history.push("/auth/forgot-password")
+                          this.props.history.push(
+                            `${match.path}/auth/forgot-password`
+                          )
                         }
                         location={location}
                         history={history}
@@ -178,7 +177,7 @@ const withOrbital = ({
                       authUiStore={rootStore.authUiStore}
                     >
                       <Register
-                        onLogin={() => history.push("/auth/login")}
+                        onLogin={() => history.push(`${match.path}/auth/login`)}
                         location={location}
                         history={history}
                         match={match}
@@ -195,7 +194,7 @@ const withOrbital = ({
                   <LoginWrapper backgroundImage={registerBG}>
                     <Auth authDomainStore={rootStore.authDomainStore}>
                       <ForgotPassword
-                        onLogin={() => history.push("/auth/login")}
+                        onLogin={() => history.push(`${match.path}/auth/login`)}
                         location={location}
                         history={history}
                         match={match}
@@ -212,7 +211,7 @@ const withOrbital = ({
                   <LoginWrapper backgroundImage={registerBG}>
                     <Auth authDomainStore={rootStore.authDomainStore}>
                       <ResetPassword
-                        onLogin={() => history.push("/auth/login")}
+                        onLogin={() => history.push(`${match.path}/auth/login`)}
                         location={location}
                         history={history}
                         match={match}
@@ -223,7 +222,7 @@ const withOrbital = ({
               }}
             />
             <Route
-              path="/profile"
+              path={`${match.path}/profile`}
               render={({ location, match, history }) => {
                 return (
                   <MainWrapper
@@ -263,6 +262,7 @@ const withOrbital = ({
                               location={location}
                               match={match}
                               history={history}
+                              classes={classes}
                             />
                           </Notification>
                         </Media>
@@ -273,8 +273,8 @@ const withOrbital = ({
               }}
             />
             <Route
-              path="/notifications"
-              render={({ location, match, history }) => {
+              path={`${match.path}/notifications`}
+              render={props => {
                 return (
                   <MainWrapper
                     classes={classes}
@@ -333,7 +333,7 @@ const withOrbital = ({
             />
             <Route
               path="*"
-              render={({ location, match, history }) => {
+              render={props => {
                 return (
                   <MainWrapper
                     classes={classes}
@@ -357,10 +357,7 @@ const withOrbital = ({
       );
     }
   }
-  return compose(
-    withRouter,
-    withStyles(styles, { defaultTheme: theme })
-  )(WithOrbital);
+  return compose(withStyles(styles, { defaultTheme: theme }))(WithOrbital);
 };
 
 export default withOrbital;
