@@ -133,7 +133,7 @@ const withOrbital = ({
     }
     render() {
       const { isLoggedIn } = this.state;
-      const { classes, match } = this.props;
+      const { classes, match, ...rest } = this.props;
       console.log("WITH ORBITAL CLASSES", classes);
       console.log("WITH ORBITAL THEME", theme);
       const currentRouteList = isLoggedIn ? routeList : routeListLoggedOut;
@@ -330,6 +330,7 @@ const withOrbital = ({
               location={this.props.location}
               match={this.props.match}
               history={this.props.history}
+              {...rest}
             />
             <Route
               path="*"
