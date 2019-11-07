@@ -141,7 +141,7 @@ const withOrbital = ({
         <ThemeProvider theme={theme}>
           <Switch>
             <Route
-              path="/auth/login"
+              path={`${match.path}/auth/login`}
               render={({ location, history, match }) => {
                 return (
                   <LoginWrapper backgroundImage={loginBG}>
@@ -168,7 +168,7 @@ const withOrbital = ({
               }}
             />
             <Route
-              path="/auth/register"
+              path={`${match.path}/auth/register`}
               render={({ location, history, match }) => {
                 return (
                   <LoginWrapper backgroundImage={registerBG}>
@@ -188,7 +188,7 @@ const withOrbital = ({
               }}
             />
             <Route
-              path="/auth/forgot-password"
+              path={`${match.path}/auth/forgot-password`}
               render={({ location, history, match }) => {
                 return (
                   <LoginWrapper backgroundImage={registerBG}>
@@ -205,7 +205,7 @@ const withOrbital = ({
               }}
             />
             <Route
-              path="/auth/reset-password"
+              path={`${match.path}/auth/reset-password`}
               render={({ location, history, match }) => {
                 return (
                   <LoginWrapper backgroundImage={registerBG}>
