@@ -16,6 +16,7 @@ import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
 import { MainWrapper, LoginWrapper, Loading } from "Templates";
+import { styles } from "Styles";
 const ForgotPassword = Loadable({
   loader: () =>
     import(
@@ -64,7 +65,6 @@ const withOrbital = ({
   routeList,
   rootStore,
   logo,
-  styles,
   gaTrackingCode,
   disableAuth,
   offlineStorage,
@@ -127,13 +127,15 @@ const withOrbital = ({
             this.props.history.push(`${match.path}/auth/login`);
           });
       }
+      this.props.onInit ? this.props.onInit(routeList) : "";
     }
     onLogout() {
       rootStore.authDomainStore.logout();
     }
     render() {
       const { isLoggedIn } = this.state;
-      const { classes, match, ...rest } = this.props;
+      const { match, overrideClasses, ...rest } = this.props;
+      const classes = overrideClasses ? overrideClasses : this.props.classes;
       console.log("WITH ORBITAL CLASSES", classes);
       console.log("WITH ORBITAL THEME", theme);
       const currentRouteList = isLoggedIn ? routeList : routeListLoggedOut;
