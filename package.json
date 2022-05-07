@@ -1,6 +1,6 @@
 {
   "name": "@markab.io/orbital",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A way to get up and running quickly with any programming task.",
   "main": "index.js",
   "scripts": {
