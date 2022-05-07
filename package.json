@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --mode=development --env.development --port 8085",
     "deploy": "npm run build && cp -a lib/ client/ && cp -a ./index.html client/ && ./node_modules/.bin/serverless client deploy --no-confirm",
-    "build": "rm -rf ./lib/* && ./node_modules/.bin/webpack --env.production",
+    "build": "rm -rf ./lib/* && ./node_modules/.bin/webpack --env.development",
     "test": "node_modules/.bin/jest"
   },
   "repository": {

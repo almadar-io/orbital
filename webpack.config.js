@@ -7,6 +7,7 @@ const externals = require("./build/webpack.prod.externals");
 
 module.exports = (env) => ({
   entry: "./index.js",
+  mode: 'development',
   output: {
     path: path.join(__dirname, "lib"),
     filename: "orbital.js",
