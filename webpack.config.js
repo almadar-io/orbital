@@ -1,11 +1,11 @@
 "use strict";
 var webpack = require("webpack");
 var path = require("path");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const externals = require("./build/webpack.prod.externals");
 
-module.exports = env => ({
+module.exports = (env) => ({
   entry: "./index.js",
   output: {
     path: path.join(__dirname, "lib"),
@@ -13,39 +13,45 @@ module.exports = env => ({
     publicPath: "/lib/",
     library: "orbital",
     libraryTarget: "umd",
-    umdNamedDefine: true // Important
+    umdNamedDefine: true, // Important
   },
   externals: env.production ? externals : {},
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
         test: /\.js$/, //Check for all js files
         use: [
           {
             loader: "babel-loader",
-            options: { babelrcRoots: [".", "../"] }
-          }
+            options: { babelrcRoots: [".", "../"] },
+          },
         ],
-        exclude: /(node_modules|bower_compontents)/
+        exclude: /(node_modules|bower_compontents)/,
       },
       {
         test: /\.(css|sass|scss)$/, //Check for sass or scss file names
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.json$/,
-        loader: "json-loader" //JSON loader
-      }
-    ]
+        loader: "json-loader", //JSON loader
+      },
+    ],
   },
   resolve: {
-    alias: {
-    }
+    alias: {},
   },
   plugins: env.production ? [new BundleAnalyzerPlugin()] : [],
   //To run development server
   devServer: {
-    contentBase: __dirname
+    contentBase: __dirname,
   },
-  devtool: "sourcmap"
+  devtool: "sourcmap",
 });
