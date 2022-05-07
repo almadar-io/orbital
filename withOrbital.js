@@ -15,7 +15,11 @@ import config from "./config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
-import { MainWrapper, LoginWrapper, Loading } from "@markab.io/orbital-templates";
+import {
+  MainWrapper,
+  LoginWrapper,
+  Loading,
+} from "@markab.io/orbital-templates";
 const ForgotPassword = Loadable({
   loader: () =>
     import(
@@ -137,7 +141,7 @@ const withOrbital =
         const { isLoggedIn } = this.state;
         const { match, overrideClasses, ...rest } = this.props;
         const classes = overrideClasses ? overrideClasses : this.props.classes;
-        console.log("WITH ORBITAL CLASSES", classes);
+        console.log("WITH ORBITAL CLASSES", classes, this.props);
         console.log("WITH ORBITAL THEME", theme);
         const currentRouteList = isLoggedIn ? routeList : routeListLoggedOut;
         return (
