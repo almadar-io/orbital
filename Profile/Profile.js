@@ -1,5 +1,5 @@
 import React from "react";
-import { ModelEdit, ClientNotification } from "Templates";
+import { ModelEdit, ClientNotification } from "@markab.io/orbital-templates";
 import { withStyles } from "@material-ui/core/styles";
 import userSchema from "../Models/user";
 

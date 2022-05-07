@@ -14,7 +14,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import CancelIcon from "@material-ui/icons/Cancel";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
-import { Inputs } from "Templates";
+import { Inputs } from "@markab.io/orbital-templates";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { compose, withState } from "recompose";
 

@@ -19,7 +19,7 @@ import config from "Config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
-import { MainWrapper, LoginWrapper, Loading } from "Templates";
+import { MainWrapper, LoginWrapper, Loading } from "@markab.io/orbital-templates";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import ResetPassword from "./ResetPassword/ResetPassword";
 import Register from "./Register/Register";

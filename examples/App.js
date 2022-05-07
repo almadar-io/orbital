@@ -9,7 +9,7 @@ import rootStore from "../Store/rootStore";
 import User from "../User/User";
 import { Crud, Notification, Media, Forms } from "@markab.io/react";
 import routeList from "../Routes";
-import { MainWrapper } from "Templates";
+import { MainWrapper } from "@markab.io/orbital-templates";
 const logo = "";
 const MyApp = props => {
   const { classes, isLoggedIn, user, onLogout } = props;

@@ -10,7 +10,7 @@ import {
 import ListTree from "./ListTree.js";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import { ConfirmDeleteModal, Autocomplete } from "Templates";
+import { ConfirmDeleteModal, Autocomplete } from "@markab.io/orbital-templates";
 import GraphTree from "./GraphTree";
 import { withState, compose } from "recompose";
 import {

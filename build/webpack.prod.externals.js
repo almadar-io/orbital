@@ -36,9 +36,9 @@ module.exports = {
     root: "moment"
   },
   Templates: {
-    commonjs: "Templates",
-    commonjs2: "Templates",
-    amd: "Templates",
-    root: "Templates"
+    commonjs: "@markab.io/orbital-templates",
+    commonjs2: "@markab.io/orbital-templates",
+    amd: "@markab.io/orbital-templates",
+    root: "@markab.io/orbital-templates"
   }
 };

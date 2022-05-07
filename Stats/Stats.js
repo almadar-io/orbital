@@ -11,7 +11,7 @@ import {
   Icon
 } from "@material-ui/core";
 import theme from "Theme";
-import { Charts } from "Templates";
+import { Charts } from "@markab.io/orbital-templates";
 const Stats = ({ model_count, model_form, modelName, query, field }) => {
   const periods = ["daily", "monthly", "yearly"];
   // query={{

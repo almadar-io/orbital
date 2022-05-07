@@ -1,5 +1,5 @@
 import React from "react";
-import { ResetPassword } from "Templates";
+import { ResetPassword } from "@markab.io/orbital-templates";
 
 const ResetPasswordModule = ({
   changePassword,

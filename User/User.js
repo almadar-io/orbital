@@ -1,5 +1,5 @@
 import React from "react";
-import { ModelList } from "Templates";
+import { ModelList } from "@markab.io/orbital-templates";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./User.styles";
 import userSchema from "../Models/user";

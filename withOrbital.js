@@ -15,7 +15,7 @@ import config from "Config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
-import { MainWrapper, LoginWrapper, Loading } from "Templates";
+import { MainWrapper, LoginWrapper, Loading } from "@markab.io/orbital-templates";
 const ForgotPassword = Loadable({
   loader: () =>
     import(
