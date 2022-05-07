@@ -40,19 +40,6 @@ module.exports = env => ({
   },
   resolve: {
     alias: {
-      react: path.resolve("./node_modules/react"),
-      "react-router-dom": path.resolve("./node_modules/react-router-dom"),
-      Orbital: path.resolve(__dirname, "./orbital"),
-      Theme: path.resolve(__dirname, "./theme.js"),
-      Config: env
-        ? env.production
-          ? path.resolve(__dirname, "./config/prod.js")
-          : path.resolve(__dirname, "./config/qa.js")
-        : path.resolve(__dirname, "./config/index.js")
-      // "@markab.io/react": path.resolve(
-      //   __dirname,
-      //   "../../../../react-services/lib/react-services.js"
-      // )
     }
   },
   plugins: env.production ? [new BundleAnalyzerPlugin()] : [],

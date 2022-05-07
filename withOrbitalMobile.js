@@ -15,7 +15,7 @@ import {
   Notification,
   Crud
 } from "@markab.io/react";
-import config from "Config";
+import config from "./config";
 import ReactGA from "react-ga";
 import { compose } from "recompose";
 import { withStyles, ThemeProvider } from "@material-ui/core/styles";
