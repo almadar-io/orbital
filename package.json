@@ -61,7 +61,7 @@
     "serverless-finch": "^2.4.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.0",
-    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.7.1"
   },
